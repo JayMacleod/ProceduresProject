@@ -1,4 +1,5 @@
 <html>
+
 <head>
 <title>Procedures Application</title>
 <meta charset="utf-8">
@@ -10,6 +11,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
+
 <script>
 function request(){
 	
@@ -22,28 +24,33 @@ function request(){
 		data=JSON.parse(Http.responseText);
 		data.forEach(function(item){
 		
-			var div=document.createElement("div");
+//			var div=document.createElement("div");
+			
 			var proId=document.createElement("span");
 			var proName=document.createElement("span");
 			var proSpeciality=document.createElement("span");
 			var proInstruments=document.createElement("span");
 		
-			
-			div.className="container";
-			div.className+= " navbar-header";
+//			div.className="container";
+//			div.className+= " navbar-header";
 			proId.innerHTML=item.proId;
-			proId.id="idd";
-			proId.className="btn-warning ";
-			proName.className="btn-success ";
+//			proId.id="idd";
+//			proId.className="btn-warning ";
+//			proName.className="btn-success ";
 			proName.innerHTML=item.proName;
 			proSpeciality.innerHTML=item.proSpeciality;
 			proInstruments.innerHTML=item.proInstruments;
 		
-			div.appendChild(proId);
-			div.appendChild(proName);
-			div.appendChild(proSpeciality);
-			div.appendChild(proInstruments);
-			document.body.appendChild(div);
+			document.body.appendChild(proId);
+			document.body.appendChild(proName);
+			document.body.appendChild(proSpeciality);
+			document.body.appendChild(proInstruments);
+			
+//			div.appendChild(proId);
+//			div.appendChild(proName);
+//			div.appendChild(proSpeciality);
+//			div.appendChild(proInstruments);
+//			document.body.appendChild(div);
 		});
 	}
 	

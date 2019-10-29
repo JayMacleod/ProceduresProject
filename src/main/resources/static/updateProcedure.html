@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <title>Procedures Book</title>
+  <title>Updating a Procedure</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -13,8 +12,8 @@
 
 <div class="jumbotron text-center" style="background-image: url('images/instruments4.jpg');">
   <div class="topnav" style="background-color:white">
-  <h3>PROCEDURES BOOK HOME PAGE</h3>
-  
+  <h3>UPDATING A PROCEDURE</h3>
+ 
   <a class="active" href="file:///C:/Users/admin/Documents/stsworkspace/SurgicalProject/src/main/resources/static/index.html">Home</a>
   <a href="file:///C:/Users/admin/Documents/stsworkspace/SurgicalProject/src/main/resources/static/viewAllProcedures.html">View</a>
   <a href="file:///C:/Users/admin/Documents/stsworkspace/SurgicalProject/src/main/resources/static/addProcedure.html">Add</a>
@@ -24,15 +23,38 @@
 </div>
 
 <div class="container">
-  <h4>Choose an option below</h4>
-  <div class="btn-group-vertical">
-    <a href="file:///C:/Users/admin/Documents/stsworkspace/SurgicalProject/src/main/resources/static/viewAllProcedures.html" role="button" class="btn btn-primary">View all Procedures</a>
-    <a href="file:///C:/Users/admin/Documents/stsworkspace/SurgicalProject/src/main/resources/static/addProcedure.html" role="button" class="btn btn-primary">Add a Procedure</a>
-    <a href="file:///C:/Users/admin/Documents/stsworkspace/SurgicalProject/src/main/resources/static/updateProcedure.html" role="button" class="btn btn-primary">Update a Procedure</a>
-    <a href="file:///C:/Users/admin/Documents/stsworkspace/SurgicalProject/src/main/resources/static/deleteProcedure.html" role="button" class="btn btn-primary">Remove a Procedure</a>
-  </div>
+<h4>List of current procedures:</h4>
+		<div id="procedures">
+			
+		</div>
 </div>
 
+<div class="container">
+<h4>Update a procedure:</h4>
+
+		<form>
+		<div class="form-group">
+				<label for="proId">Procedure Id:</label> <input type="text"
+					class="form-control" id="proId" required>
+			</div>
+			<div class="form-group">
+				<label for="proName">Procedure name:</label> <input type="text"
+					class="form-control" id="proName" required>
+			</div>
+			<div class="form-group">
+				<label for="proSpeciality">Speciality:</label> <input type="text"
+					class="form-control" id="proSpeciality" required>
+			</div>
+			<div class="form-group">
+				<label for="proInstruments">Instruments:</label> <input type="text"
+					class="form-control" id="proInstruments" required>
+			</div>
+			<input class="btn btn-primary pull-right" name="submit" type="submit" value="submit" onclick="updateProcedure()"/>
+		</form>
+
+</div>
 </body>
+
+<script src="js/procedures2.js"></script>
 
 </html>

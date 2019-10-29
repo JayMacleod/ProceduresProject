@@ -1,6 +1,6 @@
 package com.nw.service;
 
-
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,11 @@ public class ProceduresService {
 	
 	@Autowired
 	private ProceduresRepository ProRep;
+	
+	private Procedures procedure;
+	
+	//record is an array list containing objects of type Procedures 
+	ArrayList<Procedures> record = new ArrayList<>();
 	
 	public ProceduresService() {
 	}
@@ -38,10 +43,15 @@ public class ProceduresService {
 	public Procedures updateProcedure(Procedures procedure) {
 		return ProRep.save(procedure);
 	}
-
+	
 	public String deleteProcedure(int id) {
-		ProRep.deleteById(id);;
+		ProRep.deleteById(id);
 		return "Procedure succesfully deleted";
+	}
+	
+	public Procedures findById(int id) {
+		procedure = ProRep.findById(id);
+		return procedure;
 	}
 	
 

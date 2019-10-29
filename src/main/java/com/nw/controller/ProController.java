@@ -4,6 +4,7 @@ package com.nw.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import com.nw.service.ProceduresService;
 
 @RestController
 @RequestMapping("/proceduresapp")
+@CrossOrigin("*")
 public class ProController {
 	
 	@Autowired
@@ -38,9 +40,15 @@ public class ProController {
 		return proService.updateProcedure(procedure);
 	}
 	
+	
 	@DeleteMapping("/procedures/{id}")
 	public String deleteProcedures(@PathVariable(value = "id") int id) {
 		return proService.deleteProcedure(id);
+	}
+	
+	@GetMapping("/showById/{id}")
+	public Procedures findById(@PathVariable(value = "id") int id) {
+		return proService.findById(id);
 	}
 	
 }

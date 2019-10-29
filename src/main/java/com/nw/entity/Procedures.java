@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class Procedures {
 		
@@ -20,6 +21,14 @@ public class Procedures {
 		}
 		public Procedures(String proName, String proSpeciality, String proInstruments) {
 			super();
+			this.proName = proName;
+			this.proSpeciality = proSpeciality;
+			this.proInstruments = proInstruments;
+		}
+		
+		public Procedures(int proId, String proName, String proSpeciality, String proInstruments) {
+			super();
+			this.proId = proId;
 			this.proName = proName;
 			this.proSpeciality = proSpeciality;
 			this.proInstruments = proInstruments;
