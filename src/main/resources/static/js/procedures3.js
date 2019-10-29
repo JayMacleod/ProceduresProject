@@ -21,18 +21,6 @@ function getProcedures() {
 	}
 	request.send();
 }
-//	$.ajax({
-//		type : "GET",
-//		url : "http://localhost:8080/proceduresapp/procedures",
-//		success : function(data) {
-//			var list = $('<ul class="list-group"></ul>');
-//			$('p').append(list);
-//			$.each(data, function(index, procedures) {
-//				list.append('<li class="list-group-item">' + "TO REMOVE PROCEDURE: " + procedures.proName + ", USE ID NUMBER: " + procedures.proId +'</li>')
-//			});
-//		}
-//	});
-//}
 
 function deleteProcedure() {
 	
@@ -48,17 +36,4 @@ function deleteProcedure() {
 	return false;
 }
 
-//	$.ajax({
-//		type : "DELETE",
-//		url : "http://localhost:8080/proceduresapp/procedures/" + proId,
-//		contentType : "application/json",
-//		data : proceduresJSON,
-//		success : function(data) {
-//			getProcedures();
-//		},
-//		error : function(data) {
-//			console.log(data);
-//		},
-//		dataType : 'json'
-//	});
 
