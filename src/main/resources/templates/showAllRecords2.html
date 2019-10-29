@@ -1,0 +1,42 @@
+<html>
+<script>
+function request(){
+console.log("ShowAllRecords");
+const Http = new XMLHttpRequest();
+const url='http://localhost:8080/proceduresapp/procedure';
+Http.open("GET", url);
+Http.onreadystatechange = function(e){
+	
+console.log("status"+Http.readyState);
+
+if (Http.readyState==4){
+	data=JSON.parse(Http.responseText);
+	var A=0;
+	console.log("length:"+data.length);
+	data.forEach(function(item){
+
+		var proId=document.createElement("span");
+		var proName=document.createElement("span");
+		var proSpeciality=document.createElement("span");
+		var proInstruments=document.createElement("span");
+		
+		proId.innerHTML=item.proId	
+		proName.innerHTML=item.proName;
+		proSpeciality.innerHTML=item.proSpeciality;
+		proInstruments.innerHTML=item.proInstruments;
+		
+		document.body.appendChild(proId);
+		document.body.appendChild(proName);
+		document.body.appendChild(proSpeciality);
+		document.body.appendChild(proInstruments);
+		
+		A=A+1;
+		console.log(A);
+	});
+}
+}
+Http.send();
+}
+</script>
+<input type="button" value="Send Request" onclick="request()">
+</html>

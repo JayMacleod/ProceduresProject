@@ -1,0 +1,65 @@
+<html>
+
+<head>
+<title>Procedures Application</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<script>
+function request(){
+	
+	console.log("ShowAllRecords");
+	const Http = new XMLHttpRequest();
+	const url='http://localhost:8080/proceduresapp/procedures';
+	Http.open("GET", url);
+	Http.onreadystatechange = function(e){
+	
+		data=JSON.parse(Http.responseText);
+		data.forEach(function(item){
+		
+//			var div=document.createElement("div");
+			
+			var proId=document.createElement("span");
+			var proName=document.createElement("span");
+			var proSpeciality=document.createElement("span");
+			var proInstruments=document.createElement("span");
+		
+//			div.className="container";
+//			div.className+= " navbar-header";
+			proId.innerHTML=item.proId;
+//			proId.id="idd";
+//			proId.className="btn-warning ";
+//			proName.className="btn-success ";
+			proName.innerHTML=item.proName;
+			proSpeciality.innerHTML=item.proSpeciality;
+			proInstruments.innerHTML=item.proInstruments;
+		
+			document.body.appendChild(proId);
+			document.body.appendChild(proName);
+			document.body.appendChild(proSpeciality);
+			document.body.appendChild(proInstruments);
+			
+//			div.appendChild(proId);
+//			div.appendChild(proName);
+//			div.appendChild(proSpeciality);
+//			div.appendChild(proInstruments);
+//			document.body.appendChild(div);
+		});
+	}
+	
+Http.send();
+
+}
+</script>
+
+<input type="button" value="Send Request" onclick="request()">
+
+
+</html>

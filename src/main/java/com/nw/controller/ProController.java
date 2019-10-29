@@ -1,79 +1,54 @@
 package com.nw.controller;
 
-import java.util.ArrayList;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nw.entity.Procedures;
-import com.nw.repository.ProceduresRepository;
+import com.nw.service.ProceduresService;
 
 @RestController
+@RequestMapping("/proceduresapp")
+@CrossOrigin("*")
 public class ProController {
 	
 	@Autowired
-	private ProceduresRepository proRep;
+	private ProceduresService proService;
 
-	@GetMapping("/showAllProcedures")
-	public ArrayList<Procedures> showAllProcedures(){
-		return proRep.findAll();
+	@GetMapping("/procedures")
+	public List<Procedures> getAllProcedures() {
+		return proService.getAllProcedures();
 	}
 	
-	@GetMapping("/showByProcedureId/{Id}")
-	public Procedures findProId(@PathVariable int Id){
-		return proRep.findByproId(Id);
+	@PostMapping("/procedures")
+	public Procedures addNewProcedures(@RequestBody Procedures procedure) {
+		return proService.addNewProcedure(procedure);
 	}
 	
-	@GetMapping("/showByProcedureName/{N}")
-	public ArrayList<Procedures>  findProName(@PathVariable String N){
-		return proRep.findByproName(N);
+	@PutMapping("/procedures")
+	public Procedures updateProcedures(@RequestBody Procedures procedure) {
+		return proService.updateProcedure(procedure);
 	}
 	
-	@GetMapping("/showByProcedureSpeciality/{S}")
-	public ArrayList<Procedures>  findProSpeciality(@PathVariable String S){
-		return proRep.findByproSpeciality(S);
+	
+	@DeleteMapping("/procedures/{id}")
+	public String deleteProcedures(@PathVariable(value = "id") int id) {
+		return proService.deleteProcedure(id);
 	}
 	
-	@GetMapping("/showByProcedureInstruments/{S}")
-	public ArrayList<Procedures>  findProInstruments(@PathVariable String S){
-		return proRep.findByproInstruments(S);
+	@GetMapping("/showById/{id}")
+	public Procedures findById(@PathVariable(value = "id") int id) {
+		return proService.findById(id);
 	}
-	
-	@PostMapping("/saveProcedure/{Id}/{name}/{speciality}/{instruments}")
-	public String saveProcedure(@PathVariable int Id, @PathVariable String name, @PathVariable String speciality, @PathVariable String instruments) {
-		
-		Procedures Ref = new Procedures();
-		
-		Ref.setProId(Id);
-		Ref.setProName(name);
-		Ref.setProSpeciality(speciality);
-		Ref.setProInstruments(instruments);
-		
-		proRep.save(Ref);
-	
-		return "Saved";
-	}
-	
-	@PostMapping("/saveProcedureDirect")
-	public void saveProcedureData2(@RequestBody Procedures Ref) {
-		proRep.save(Ref);
-	}
-	
-	@DeleteMapping("/deleteProcedure/{Id}")
-	public String deleteProcedures(@PathVariable int Id){
-		proRep.deleteByproId(Id);
-		return "Deleted";
-	}
-	
-	@GetMapping("/findInstruments/{Id}")
-	public String findInstruments(@PathVariable int Id) {
-		return proRep.findInstruments(Id);
-	}
-	
 	
 }

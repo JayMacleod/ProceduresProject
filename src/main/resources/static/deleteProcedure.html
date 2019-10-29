@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Removing a Procedure</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<body>
+
+<div class="jumbotron text-center" style="background-image: url('images/instruments4.jpg');">
+  <div class="topnav" style="background-color:white">
+  <h3>REMOVING A PROCEDURE</h3>
+  
+  <a class="active" href="file:///C:/Users/admin/Documents/stsworkspace/SurgicalProject/src/main/resources/static/index.html">Home</a>
+  <a href="file:///C:/Users/admin/Documents/stsworkspace/SurgicalProject/src/main/resources/static/viewAllProcedures.html">View</a>
+  <a href="file:///C:/Users/admin/Documents/stsworkspace/SurgicalProject/src/main/resources/static/addProcedure.html">Add</a>
+  <a href="file:///C:/Users/admin/Documents/stsworkspace/SurgicalProject/src/main/resources/static/updateProcedure.html">Update</a>
+  <a href="file:///C:/Users/admin/Documents/stsworkspace/SurgicalProject/src/main/resources/static/deleteProcedure.html">Remove</a>
+</div>
+</div>
+
+<div class="container">
+<h4>List of current procedures:</h4>
+		<div id="procedures">
+			
+		</div>
+</div>
+
+<div class="container">
+<h4>Remove a procedure:</h4>
+
+				<form onsubmit="return deleteProcedure()">
+			<div class="form-group">
+				<label for="proId">Procedure Id:</label> <input type="text"
+					class="form-control" id="proId" required>
+			</div>
+			<input class="btn btn-primary pull-right" type="submit" />
+		</form>
+
+</div>
+</body>
+
+<script src="js/procedures3.js"></script>
+
+</html>
