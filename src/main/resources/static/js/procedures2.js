@@ -38,16 +38,6 @@ function updateProcedure() {
 		
 		var proceduresJSON = JSON.stringify(procedures);
 		
-//		let request = new XMLHttpRequest();
-//		request.open("POST", "http://localhost:8080/proceduresapp/procedures");
-//		request.onload=function(){
-//			getProcedures();
-//		}
-//		
-//		request.send();
-//		return false;
-//}
-		
 		$.ajax({
 			type : "POST",
 			url : "http://localhost:8080/proceduresapp/procedures",

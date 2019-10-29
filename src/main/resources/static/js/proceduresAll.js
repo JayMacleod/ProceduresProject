@@ -21,17 +21,4 @@ function getProcedures() {
 	}
 	request.send();
 
-//function getProcedures() {
-//	$.ajax({
-//		type : "GET",
-//		url : "http://localhost:8080/proceduresapp/procedures",
-//		success : function(data) {
-//			var list = $('<ul class="list-group"></ul>');
-//			$('p').append(list);
-//			$.each(data, function(index, procedures) {
-//				list.append('<li class="list-group-item">' + "PROCEDURE NAME: " + procedures.proName
-//				+ ", SPECIALITY: " + procedures.proSpeciality + ", INSTRUMENTS: " + procedures.proInstruments + '</li>')
-//			});
-//		}
-//	});
 }
