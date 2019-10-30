@@ -13,7 +13,7 @@ function addProcedure() {
 	
 	$.ajax({
 		type : "POST",
-		url : "http://"+location.host +":8080" + "/proceduresapp/procedures",
+		url : "http://"+location.host +":8081" + "/proceduresapp/procedures",
 		contentType : "application/json",
 		data : proceduresJSON,
 		success : function(data) {

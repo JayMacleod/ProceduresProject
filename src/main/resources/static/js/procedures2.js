@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 function getProcedures() {
 	let request = new XMLHttpRequest();
-	request.open("GET", "http://"+location.host +":8080" + "/proceduresapp/procedures");
+	request.open("GET", "http://"+location.host +":8081" + "/proceduresapp/procedures");
 	request.onload = function() {
 		let mainlist = document.getElementById("procedures");
 		mainlist.innerHTML = "";
@@ -40,7 +40,7 @@ function updateProcedure() {
 		
 		$.ajax({
 			type : "POST",
-			url : "http://localhost:8080/proceduresapp/procedures",
+			url : "http://"+location.host +":8081" + "/proceduresapp/procedures",
 			contentType : "application/json",
 			data : proceduresJSON,
 			success : function(data) {
