@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 function getProcedures() {
 	let request = new XMLHttpRequest();
-	request.open("GET", "http://"+location.host +":8080" + "/proceduresapp/procedures");
+	request.open("GET", "http://"+location.host +":8081" + "/proceduresapp/procedures");
 	request.onload = function() {
 		let mainlist = document.getElementById("procedures");
 		mainlist.innerHTML = "";
@@ -27,7 +27,7 @@ function deleteProcedure() {
 	var proId = document.getElementById('proId').value;
 	
 	let request = new XMLHttpRequest();
-	request.open("DELETE", "http://localhost:8080/proceduresapp/procedures/" + proId);
+	request.open("DELETE", "http://localhost:8081/proceduresapp/procedures/" + proId);
 	request.onload=function(){
 		getProcedures();
 	}
