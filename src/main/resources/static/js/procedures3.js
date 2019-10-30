@@ -27,7 +27,7 @@ function deleteProcedure() {
 	var proId = document.getElementById('proId').value;
 	
 	let request = new XMLHttpRequest();
-	request.open("DELETE", "http://localhost:8081/proceduresapp/procedures/" + proId);
+	request.open("DELETE", "http://"+location.host +":8081" + "/proceduresapp/procedures/" + proId);
 	request.onload=function(){
 		getProcedures();
 	}
