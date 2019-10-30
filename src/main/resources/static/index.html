@@ -9,6 +9,36 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+
+</head>
 <body>
 
 <div class="jumbotron text-center" style="background-image: url('images/instruments4.jpg');">
@@ -23,8 +53,8 @@
 </div>
 </div>
 
-<div class="container">
-  <h4>Choose an option below</h4>
+<div class="container" >
+  <h4>Choose an option below - test</h4>
   <div class="btn-group-vertical">
     <a href="viewAllProcedures.html" role="button" class="btn btn-primary">View all Procedures</a>
     <a href="addProcedure.html" role="button" class="btn btn-primary">Add a Procedure</a>
