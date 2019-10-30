@@ -9,7 +9,7 @@ function findById() {
 	
 	$.ajax({
 		type : "GET",
-		url : "http://localhost:8080/proceduresapp/showById" + ProId,
+		url : "http://"+location.host +":8080" + "/proceduresapp/procedures" + ProId,
 		success : function(data) {
 			var list = $('<ul class="list-group"></ul>');
 			$('p').append(list);
