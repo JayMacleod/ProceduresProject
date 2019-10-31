@@ -25,9 +25,9 @@ public class ProceduresService {
 	
 	public List<Procedures> getAllProcedures() {
 		
-//		if (ProRep.findAll().isEmpty()) {
-//			setUpProcedures();
-//		}
+		if (ProRep.findAll().isEmpty()) {
+			setUpProcedures();
+		}
 		return ProRep.findAll();
 	}
 	

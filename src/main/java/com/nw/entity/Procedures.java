@@ -26,13 +26,13 @@ public class Procedures {
 			this.proInstruments = proInstruments;
 		}
 		
-		public Procedures(int proId, String proName, String proSpeciality, String proInstruments) {
-			super();
-			this.proId = proId;
-			this.proName = proName;
-			this.proSpeciality = proSpeciality;
-			this.proInstruments = proInstruments;
-		}
+//		public Procedures(int proId, String proName, String proSpeciality, String proInstruments) {
+//			super();
+//			this.proId = proId;
+//			this.proName = proName;
+//			this.proSpeciality = proSpeciality;
+//			this.proInstruments = proInstruments;
+//		}
 		
 		public int getProId() {
 			return proId;
