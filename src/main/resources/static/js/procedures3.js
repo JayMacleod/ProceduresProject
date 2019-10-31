@@ -14,7 +14,7 @@ function getProcedures() {
 		for(let procedure of data) {
 			let listItem = document.createElement("li");
 			listItem.className = "list-group-item";
-			listItem.innerText = procedure.proName + ", USE ID NUMBER: " + procedure.proId;
+			listItem.innerText = procedure.proName + ", Use ID Number: " + procedure.proId;
 			list.appendChild(listItem);
 		}
 		mainlist.appendChild(list)
