@@ -14,7 +14,7 @@ function getProcedures() {
 		for(let procedure of data) {
 			let listItem = document.createElement("li");
 			listItem.className = "list-group-item";
-			listItem.innerText = + "Name: " + procedure.proName + " (" + procedure.proSpeciality + ")" + ", Instruments: " + procedure.proInstruments;
+			listItem.innerText = + procedure.proName + " (" + procedure.proSpeciality + ")" + ", Instruments: " + procedure.proInstruments;
 			list.appendChild(listItem);
 		}
 		mainlist.appendChild(list)
