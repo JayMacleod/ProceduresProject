@@ -17,6 +17,22 @@ pipeline {
             steps {
 		    sh 'docker push jaymacdocker/procedures-project-server:latest'
             }
+	stage('Testing Environment') {
+            steps {
+                echo "hello"
+            }
+        }
+      stage('Staging') {
+            steps {
+                echo "hello"
+            }
+        }
+      stage('Production') {
+            steps {
+                echo "hello"
+            }
+        }
+	
         }
     }
 }
