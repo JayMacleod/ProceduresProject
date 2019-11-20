@@ -22,13 +22,13 @@ environment {
         stage('Build') {
             steps {
 		    sh 'mvn package -DskipTests'
-		    sh 'docker build -t="jaymacdocker/procedures-project-server:latest" .'
+		    sh 'docker build -t="jaymacdocker/procedures-project-server:${VERSION}" .'
                 }
             }
 
         stage('Deploy') {
             steps {
-		    sh 'docker push jaymacdocker/procedures-project-server:latest'
+		    sh 'docker push jaymacdocker/procedures-project-server:${VERSION}'
             }
         }
 
