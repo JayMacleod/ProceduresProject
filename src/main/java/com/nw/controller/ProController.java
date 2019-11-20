@@ -26,11 +26,11 @@ public class ProController {
 	private ProceduresService proService;
 
 	@GetMapping("/procedures")
-//	public List<Procedures> getAllProcedures() {
-//		return proService.getAllProcedures();
+	public List<Procedures> getAllProcedures() {
+		return proService.getAllProcedures();
 	}
 	
-//	@PostMapping("/procedures")
+	@PostMapping("/procedures")
 	public Procedures addNewProcedures(@RequestBody Procedures procedure) {
 		return proService.addNewProcedure(procedure);
 	}
