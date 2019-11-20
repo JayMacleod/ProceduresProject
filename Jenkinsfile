@@ -21,17 +21,23 @@ pipeline {
 
 	stage('Testing Environment') {
             steps {
-                echo "hello"
+                echo "Testing env"
             }
         }
       stage('Staging') {
             steps {
-                echo "hello"
+                echo "Staging"
             }
         }
       stage('Production') {
-            steps {
-                echo "hello"
+        
+	when{
+		expression{
+		env.BRANCH_NAME=='master'
+		}
+	}    
+	steps {
+                echo "Production"
             }
         }
     }
