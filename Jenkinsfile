@@ -17,6 +17,8 @@ pipeline {
             steps {
 		    sh 'docker push jaymacdocker/procedures-project-server:latest'
             }
+        }
+
 	stage('Testing Environment') {
             steps {
                 echo "hello"
@@ -32,7 +34,6 @@ pipeline {
                 echo "hello"
             }
         }
-	
-        }
+
     }
 }
