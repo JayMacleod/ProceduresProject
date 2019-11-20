@@ -8,7 +8,7 @@ environment {
     stages {
 
 	stage("version"){
-		echo "${version}"
+		echo "${VERSION}"
 	}
 
         stage('Test') {
